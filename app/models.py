@@ -16,7 +16,7 @@ class User(db.Model):
         json_post = {
             'url': url_for('api.get_user', id=self.id),
             'name': self.name,
-            'sex': self.sex,
+            'sex': 'man' if self.sex else 'woman',
             'telphone': self.telphone
         }
         return json_post
